@@ -321,6 +321,36 @@ img { max-width: 100%; display: block; }
 .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .review-link { display: block; text-align: center; margin-top: 30px; color: var(--primary); font-weight: 600; }
 .review-link:hover { text-decoration: underline; }
+
+/* FAQ */
+.faq { background: var(--bg-light); padding: 80px 0; }
+.faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+}
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--primary-dark);
+  list-style: none;
+  position: relative;
+  padding-right: 30px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.3rem;
+  color: var(--accent);
+  transition: transform 0.2s ease;
+}
+.faq-item[open] summary::after { content: "\2212"; }
+.faq-item p { color: var(--text-light); margin-top: 12px; font-size: 0.94rem; line-height: 1.6; }
 .testimonial-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; }
 .testimonial-card p { font-style: italic; color: var(--text-light); margin-bottom: 16px; }
 .testimonial-author { font-weight: 600; color: var(--primary-dark); font-size: 0.9rem; }
