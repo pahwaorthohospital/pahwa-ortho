@@ -167,10 +167,6 @@ img { max-width: 100%; display: block; }
 .photo-card { padding: 0; overflow: hidden; aspect-ratio: 37/64; max-width: 380px; }
 .photo-card img { width: 100%; height: 100%; object-fit: cover; object-position: top center; border-radius: var(--radius); }
 
-/* Cover banner */
-.cover-banner { padding: 24px 0 0; background: var(--white); }
-.cover-banner img { width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow); }
-
 /* Head to toe banner */
 .head-to-toe {
   background: radial-gradient(120% 140% at 50% -10%, #1c3a63 0%, #0b1730 55%, #070f24 100%);
