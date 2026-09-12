@@ -1,3 +1,21 @@
+const splash = document.getElementById("splash-screen");
+if (splash) {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const alreadySeen = sessionStorage.getItem("splashSeen");
+
+  if (alreadySeen || reduceMotion) {
+    splash.classList.add("splash-instant");
+  } else {
+    sessionStorage.setItem("splashSeen", "1");
+    const dismiss = () => splash.classList.add("splash-hide");
+    const timer = setTimeout(dismiss, 1800);
+    splash.addEventListener("click", () => {
+      clearTimeout(timer);
+      dismiss();
+    });
+  }
+}
+
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
 
