@@ -176,9 +176,10 @@ img { max-width: 100%; display: block; }
 .head-to-toe-inner { max-width: 1100px; margin: 0 auto; }
 .joint-circles { display: flex; justify-content: center; gap: 22px; flex-wrap: wrap; margin-bottom: 34px; }
 .joint-circle { width: 130px; }
-.joint-circle img {
+.xray-wrap { position: relative; width: 100%; aspect-ratio: 1/1; }
+.xray-wrap img {
   width: 100%;
-  aspect-ratio: 1/1;
+  height: 100%;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid #3f6f95;
@@ -186,11 +187,44 @@ img { max-width: 100%; display: block; }
   background: #000;
 }
 .joint-circle p { color: #bcd6ea; font-size: 0.78rem; font-weight: 600; margin-top: 10px; letter-spacing: 0.3px; }
-.joint-circle-featured img { filter: drop-shadow(0 0 22px rgba(94, 203, 232, 0.6)); transform: scale(1.12); border-color: var(--accent); }
+.joint-circle-featured .xray-wrap img { filter: drop-shadow(0 0 22px rgba(94, 203, 232, 0.6)); transform: scale(1.12); border-color: var(--accent); }
 .head-to-toe h2 { color: #fff; font-size: 1.9rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 14px; }
 .head-to-toe h2 span { display: block; color: var(--accent); font-size: 1.6rem; font-weight: 400; margin-top: 4px; }
 .head-to-toe > .head-to-toe-inner > p { color: #9db6cf; font-size: 0.9rem; max-width: 700px; margin: 0 auto; }
-.xray-credit { color: #5c7996 !important; font-size: 0.72rem !important; margin-top: 18px !important; }
+
+.pain-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16%;
+  height: 16%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff4d4d 0%, #ff2d2d 60%, transparent 100%);
+  box-shadow: 0 0 10px 3px rgba(255, 60, 60, 0.8);
+  animation: pain-dot-pulse 1.8s ease-in-out infinite;
+  pointer-events: none;
+}
+.pain-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16%;
+  height: 16%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(255, 60, 60, 0.55);
+  animation: pain-ring-pulse 1.8s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes pain-dot-pulse {
+  0%, 100% { opacity: 0.75; transform: translate(-50%, -50%) scale(0.9); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+}
+@keyframes pain-ring-pulse {
+  0% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(3.2); }
+}
 
 /* Highlight banner */
 .highlight-banner { background: linear-gradient(120deg, var(--primary), var(--accent)); color: #fff; padding: 34px 0; }
