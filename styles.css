@@ -361,6 +361,7 @@ img { max-width: 100%; display: block; }
 .contact-form input:focus, .contact-form textarea:focus { outline: 2px solid var(--accent); border-color: transparent; }
 .contact-form button { align-self: flex-start; }
 .form-note { font-size: 0.82rem; color: var(--text-light); font-style: italic; }
+.form-required-note { font-size: 0.78rem; color: var(--text-light); margin-bottom: -4px; }
 
 /* Footer */
 #footer { background: var(--primary-dark); color: #dceaf2; padding: 60px 0 20px; }
