@@ -40,8 +40,24 @@ if (dropdown) {
 }
 
 const form = document.getElementById("contact-form");
+const formStatus = document.getElementById("form-status");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  alert("Thanks! This form isn't connected yet — messages aren't being sent.");
-  form.reset();
+  formStatus.textContent = "Sending...";
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form),
+    headers: { Accept: "application/json" },
+  })
+    .then((res) => {
+      if (res.ok) {
+        formStatus.textContent = "Thank you! Your message has been sent — we'll get back to you soon.";
+        form.reset();
+      } else {
+        formStatus.textContent = "Something went wrong. Please call us instead at 01667-222497.";
+      }
+    })
+    .catch(() => {
+      formStatus.textContent = "Something went wrong. Please call us instead at 01667-222497.";
+    });
 });
