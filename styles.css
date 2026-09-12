@@ -306,6 +306,10 @@ img { max-width: 100%; display: block; }
 .about-inner { display: flex; gap: 50px; align-items: center; }
 .about-image, .about-text { flex: 1; }
 .about-text .section-eyebrow, .about-text .section-title { text-align: left; }
+.about-inner-centered { max-width: 760px; margin: 0 auto; }
+.about-inner-centered .section-eyebrow, .about-inner-centered .section-title { text-align: center; }
+.about-inner-centered .about-list { display: inline-block; text-align: left; }
+.about-inner-centered .btn { display: block; width: fit-content; margin: 0 auto; }
 .about-list { margin: 20px 0; }
 .about-list li { padding: 6px 0; padding-left: 24px; position: relative; color: var(--text-light); }
 .about-list li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
