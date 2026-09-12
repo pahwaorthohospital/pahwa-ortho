@@ -8,7 +8,7 @@ if (splash) {
   } else {
     sessionStorage.setItem("splashSeen", "1");
     const dismiss = () => splash.classList.add("splash-hide");
-    const timer = setTimeout(dismiss, 1800);
+    const timer = setTimeout(dismiss, 2000);
     splash.addEventListener("click", () => {
       clearTimeout(timer);
       dismiss();
